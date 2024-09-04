@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %}
+
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item ms-1 ">
+        <a class="nav-link"  href="{% url 'main:create_product' %}">Add New Product</a>
+      </li>
+    </ul>
+  </div>
+  
+</nav>
+
+<h1>Gege Shop</h1>
+
+<h5>NPM: </h5>
+<p>{{ npm }}</p> 
+<h5>Name: </h5>
+<p>{{ name }}</p> 
+<h5>Class: </h5>
+<p>{{ class }}</p>
+
+<table class = tabel>
+    <tr>
+      <th>Name</th>
+      <th>Page</th>
+      <th>Description</th>
+    </tr>
+
+    {% for product in products %}
+    <tr>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.description}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+  {% endblock content %}

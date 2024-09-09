@@ -21,8 +21,8 @@ def create_product(request):
  form = ProductForm(request.POST or None)
 
  if form.is_valid() and request.method == "POST":
-    book = form.save(commit=False)
-    book.user = request.user
+    book = form.save(commit=False) 
+    book.user = request.user #Gajadi pake cookies
     book.save()
     return redirect('main:show_main')
 

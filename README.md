@@ -18,9 +18,8 @@
 
 
 2. User -> urls.py -> views.py -> html <- models.py 
-                                    |
-                                    V  
-                                   User 
+                                    
+   html -> User
 
     Jadi untuk projek ini normalnya User ke url show_main (karena "" jadinya default kesana) nanti manggil funsgi
     show_main nya views.py nanti ngembaliin html yang diberi isi nama,npm dan kelas oleh views.py dan model Produk dari models.py yang berisi name,price,description 

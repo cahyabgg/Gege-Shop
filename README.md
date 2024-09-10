@@ -20,15 +20,19 @@ link pws : http://cahya-bagus-gegeshop2.pbp.cs.ui.ac.id/
     - Menjalankan server
 
 
+   ...
 2. User -> urls.py -> views.py -> html <- models.py 
                                     
    html -> User
+  ...
 
     Jadi untuk projek ini normalnya User ke url show_main (karena "" jadinya default kesana) nanti manggil funsgi
     show_main nya views.py nanti ngembaliin html yang diberi isi nama,npm dan kelas oleh views.py dan model Produk dari models.py yang berisi name,price,description 
 
+  ...
    User -> urls.py -> views.py -> html -> forms.py -> db.sqlite3
-
+  ...
+  
    Jika User ingin mendaftarkan produk maka akan mengklik tombol buat produk yang mengarahkan ke url create-product yang berisi fungsi create_product dari views.py akan menampilkan html create_product sambil merekan input user ke kelas ProductForm forms.py, forms.py akan mengubah isi database
 
    snapshot adalah keadaan suatu projek pada saat tertentu 

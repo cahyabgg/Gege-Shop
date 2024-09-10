@@ -1,5 +1,5 @@
 
-link pws : cahya-bagus-gegeshop.pbp.cs.ui.ac.id
+link pws : http://cahya-bagus-gegeshop2.pbp.cs.ui.ac.id/
 
 1.  - Pertama saya membuat folder gegeshop 
     - Saya menginisialisasi virtual environ dengan nama venv (berguna untuk meletakkan lib yang saya install)

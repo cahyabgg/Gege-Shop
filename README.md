@@ -1,3 +1,6 @@
+
+link pws : cahya-bagus-gegeshop.pbp.cs.ui.ac.id
+
 1.  - Pertama saya membuat folder gegeshop 
     - Saya menginisialisasi virtual environ dengan nama venv (berguna untuk meletakkan lib yang saya install)
     - Membuat .gitignore agar venv dan cache python tidak di push ke github

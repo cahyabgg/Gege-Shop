@@ -146,10 +146,10 @@ Kita memerlukan `is_valid()` untuk memastikan bahwa data yang akan kita proses b
    - Uji aplikasi secara menyeluruh dengan berbagai skenario untuk memastikan bahwa form hanya dapat diproses ketika data valid dan dilindungi dari serangan CSRF. Cek juga apakah `csrf_token` bekerja dengan baik.
 
 link postman:
-https://cdn.discordapp.com/attachments/1253351468275077180/1285803023481835612/Screenshot_2024-09-18_101959.png?ex=66eb98e1&is=66ea4761&hm=0466945283060926d8271046ba1a0f9c21af6fecf82dc3115173fa743819f510&
+https://media.discordapp.net/attachments/1253351468275077180/1285803023481835612/Screenshot_2024-09-18_101959.png?ex=66eb98e1&is=66ea4761&hm=0466945283060926d8271046ba1a0f9c21af6fecf82dc3115173fa743819f510&=&format=webp&quality=lossless&width=1177&height=662
 
-https://cdn.discordapp.com/attachments/1253351468275077180/1285803023959855156/Screenshot_2024-09-18_102013.png?ex=66eb98e1&is=66ea4761&hm=1b3545212cd0e7a9f7d158837693487fdec3cc5627c24b694e266db2a68d4279&
+https://media.discordapp.net/attachments/1253351468275077180/1285803023959855156/Screenshot_2024-09-18_102013.png?ex=66eb98e1&is=66ea4761&hm=1b3545212cd0e7a9f7d158837693487fdec3cc5627c24b694e266db2a68d4279&=&format=webp&quality=lossless&width=1177&height=662
 
-https://cdn.discordapp.com/attachments/1253351468275077180/1285803024513761280/Screenshot_2024-09-18_101936.png?ex=66eb98e2&is=66ea4762&hm=c6038e09e3cfda19c5df406bd36ca3161f039a61a910c8fbfa08ad0ca64e193f&
+https://media.discordapp.net/attachments/1253351468275077180/1285803024513761280/Screenshot_2024-09-18_101936.png?ex=66eb98e2&is=66ea4762&hm=c6038e09e3cfda19c5df406bd36ca3161f039a61a910c8fbfa08ad0ca64e193f&=&format=webp&quality=lossless&width=1177&height=662
 
-https://cdn.discordapp.com/attachments/1253351468275077180/1285803024941584427/Screenshot_2024-09-18_101948.png?ex=66eb98e2&is=66ea4762&hm=0c8fa9f523c5075555f19c1598f31e65f8a93522b7c4dd70861185546ba69f9f&
+https://media.discordapp.net/attachments/1253351468275077180/1285803024941584427/Screenshot_2024-09-18_101948.png?ex=66eb98e2&is=66ea4762&hm=0c8fa9f523c5075555f19c1598f31e65f8a93522b7c4dd70861185546ba69f9f&=&format=webp&quality=lossless&width=1177&height=662

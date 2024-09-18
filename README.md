@@ -73,7 +73,7 @@ Beberapa alasan JSON lebih populer dibandingkan XML:
   - **Kinerja Lebih Baik**: Parsing JSON lebih cepat dan memakan lebih sedikit memori dibandingkan XML, terutama dalam aplikasi web.
   - **Dukungan di JavaScript**: JSON adalah format asli yang didukung oleh JavaScript, sehingga lebih praktis untuk aplikasi berbasis web.
 
-Namun, XML masih berguna dalam situasi tertentu, seperti ketika diperlukan **validasi data** yang lebih kuat melalui DTD atau XML Schema.
+Namun, XML masih berguna dalam situasi tertentu, seperti ketika diperlukan validasi data yang lebih kuat melalui DTD atau XML Schema.
 
 **Referensi**:  
 - Bray, T. (2014). The JavaScript Object Notation (JSON) Data Interchange Format.  
@@ -145,4 +145,11 @@ Kita memerlukan `is_valid()` untuk memastikan bahwa data yang akan kita proses b
 6. **Testing**:
    - Uji aplikasi secara menyeluruh dengan berbagai skenario untuk memastikan bahwa form hanya dapat diproses ketika data valid dan dilindungi dari serangan CSRF. Cek juga apakah `csrf_token` bekerja dengan baik.
 
-Setiap langkah di atas bukan hanya mengikuti tutorial, tetapi memerlukan pemahaman konsep dasar dan cara kerja Django serta pentingnya validasi dan keamanan (seperti CSRF). Pemahaman ini membantu dalam mengadaptasi dan memperbaiki aplikasi sesuai kebutuhan real-world.
+link postman:
+https://cdn.discordapp.com/attachments/1253351468275077180/1285803023481835612/Screenshot_2024-09-18_101959.png?ex=66eb98e1&is=66ea4761&hm=0466945283060926d8271046ba1a0f9c21af6fecf82dc3115173fa743819f510&
+
+https://cdn.discordapp.com/attachments/1253351468275077180/1285803023959855156/Screenshot_2024-09-18_102013.png?ex=66eb98e1&is=66ea4761&hm=1b3545212cd0e7a9f7d158837693487fdec3cc5627c24b694e266db2a68d4279&
+
+https://cdn.discordapp.com/attachments/1253351468275077180/1285803024513761280/Screenshot_2024-09-18_101936.png?ex=66eb98e2&is=66ea4762&hm=c6038e09e3cfda19c5df406bd36ca3161f039a61a910c8fbfa08ad0ca64e193f&
+
+https://cdn.discordapp.com/attachments/1253351468275077180/1285803024941584427/Screenshot_2024-09-18_101948.png?ex=66eb98e2&is=66ea4762&hm=0c8fa9f523c5075555f19c1598f31e65f8a93522b7c4dd70861185546ba69f9f&

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}
+<title>Register</title>
+{% endblock meta %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'main-register.css' %}" />
+<div class = "login">
+    <h1>Register</h1>
+
+    <form method = "post" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+            {% if field.errors %}
+            <ul class="errorlist">
+                {% for error in field.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {{ field.label_tag }} {{ field }}
+        </p>
+        {% endfor %}
+        <input type="submit" value="Register" />
+    </form>
+
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li> {{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+{% endblock content %}

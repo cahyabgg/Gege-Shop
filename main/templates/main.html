@@ -9,6 +9,9 @@
       <li class="nav-item ms-1 ">
         <a class="nav-link"  href="{% url 'main:create_product' %}">Add New Product</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>
+      </li>
     </ul>
   </div>
   
@@ -24,20 +27,44 @@
 <p>{{ class }}</p>
 
 <table class = tabel>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Description</th>
-    </tr>
+  {% if products %}
 
-    {% for product in products %}
-    <tr>
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
-      <td>{{product.description}}</td>
-    </tr>
-    {% endfor %}
+  <tr>
+  <th>Name</th>
+  <th>Price</th>
+  <th>Description</th>
+  </tr>
+
+  {% for product in products %}
+  <tr>
+  <td>{{product.name}}</td>
+  <td>{{product.price}}</td>
+  <td>{{product.description}}</td>
+  <td> 
+    <a href="{% url 'main:edit_product' product.pk %}">
+      <button>
+        Edit
+      </button>
+      </a>
+    
+      <a href="{% url 'main:delete_product' product.pk %}">
+      <button>
+        Delete
+      </button>
+      </a>
+      
+  </td>
+  </tr>
+  {% endfor %}
   </table>
 
+  <br />
 
-  {% endblock content %}
+
+{% else %}
+  <span>No product available to edit</span>
+{% endif %}
+
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+{% endblock content %}
+

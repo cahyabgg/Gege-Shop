@@ -13,10 +13,10 @@ from django.urls import reverse
 
 @login_required(login_url='/login')
 def show_main(request):
-    product = Product.objects.all()
+    product = Product.objects.filter(user = request.user)
 
     context = {
-        "name" : "Cahya Bagus Gautama Gozales",
+        "name" : request.user.username,
         "npm" : "2306275380",
         "class" : "PBP C",
         "products" : product,

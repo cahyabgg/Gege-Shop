@@ -153,3 +153,61 @@ https://media.discordapp.net/attachments/1253351468275077180/1285803023959855156
 https://media.discordapp.net/attachments/1253351468275077180/1285803024513761280/Screenshot_2024-09-18_101936.png?ex=66eb98e2&is=66ea4762&hm=c6038e09e3cfda19c5df406bd36ca3161f039a61a910c8fbfa08ad0ca64e193f&=&format=webp&quality=lossless&width=1177&height=662
 
 https://media.discordapp.net/attachments/1253351468275077180/1285803024941584427/Screenshot_2024-09-18_101948.png?ex=66eb98e2&is=66ea4762&hm=0c8fa9f523c5075555f19c1598f31e65f8a93522b7c4dd70861185546ba69f9f&=&format=webp&quality=lossless&width=1177&height=662
+
+
+Tugas 4 [x]
+## 1. Apa perbedaan antara HttpResponseRedirect() dan redirect() ##
+**HttpResponseRedirect()** mengharuskan memberikan URL eksplisit dan bahkan kadang-kadang memerlukan method reverse untuk memberikan URL penuh berbeda dengan **redirect()** yang dapat menerima URL, nama view, dan model
+
+## 2. Jelaskan cara kerja penghubungan model Product dengan User ##
+Django memiliki model bawaan untuk pengguna (User) yang bisa dihubungkan dengan model lain menggunakan relasi database seperti ForeignKey, ManyToManyField, atau OneToOneField.
+
+Dibawah ini adalah penjelasan penghubungan model Product dengan model User:
+
+1. Menggunakan ForeignKey artinya Satu User memiliki banyak Product
+
+2. Menggunakan ManyToManyField artinya Satu Product dapat dimiliki oleh banyak User
+
+3. Menggunakan OneToOneField artinya Satu Product hanya dimiliki oleh satu User, dan sebaliknya
+
+## 3. Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut. ##
+
+1. **Authentication (Autentikasi)**
+Definisi:
+Autentikasi adalah proses memverifikasi identitas pengguna. Tujuannya adalah memastikan bahwa pengguna yang mencoba mengakses sistem benar-benar pengguna yang mereka klaim. Autentikasi biasanya dilakukan dengan meminta pengguna untuk memberikan kredensial seperti username dan password.
+
+Dalam Django:
+Django Authentication System menyediakan cara mudah untuk melakukan autentikasi pengguna.
+Saat pengguna login, Django memeriksa kredensial (username dan password) yang diberikan, memverifikasinya terhadap data di basis data, dan jika valid, Django menyimpan informasi pengguna yang terautentikasi di sesi.
+
+2. **Authorization (Otorisasi)**
+Definisi:
+Otorisasi adalah proses memutuskan apa yang bisa dilakukan pengguna setelah mereka terautentikasi. Ini adalah tentang kontrol akses, yaitu memberikan izin bagi pengguna untuk mengakses halaman atau melakukan tindakan tertentu berdasarkan perannya atau hak aksesnya. Tidak seperti Autentikasi yang hanya mengcek identitas pengguna
+
+Dalam Django:
+Django memiliki mekanisme permissions dan groups untuk mengatur otorisasi.
+Permissions adalah izin yang diberikan pada pengguna atau kelompok pengguna untuk mengakses fitur atau tindakan tertentu (misalnya: can_add_user, can_delete_product).
+Otorisasi di Django biasanya dilakukan dengan menggunakan decorators seperti @login_required dan @permission_required atau melalui pemeriksaan manual terhadap izin.
+
+3. ## Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan? ##
+
+Django mengingat pengguna yang telah login dengan menggunakan sesi (sessions) dan cookies. Saat pengguna berhasil login, Django membuat sesi untuk pengguna tersebut dan menyimpannya di basis data, memori, atau cache. Django kemudian menggunakan cookies untuk menyimpan informasi sesi di sisi pengguna, sehingga bisa mengidentifikasi pengguna saat mereka mengakses halaman lain atau kembali ke situs di waktu berikutnya.
+
+Kegunaan Lain dari Cookies
+Selain untuk autentikasi login, cookies memiliki kegunaan lain dalam pengembangan web. Beberapa di antaranya yaitu:
+
+- Menyimpan Preferensi Pengguna: Cookies dapat digunakan untuk menyimpan preferensi pengguna, seperti pengaturan bahasa, tema (dark mode atau light mode), ukuran teks, atau preferensi lainnya yang diatur oleh pengguna.
+
+- Pelacakan dan Analytics: Cookies digunakan oleh banyak situs web untuk melacak aktivitas pengguna di berbagai halaman untuk keperluan analisis. Google Analytics, misalnya, menggunakan cookies untuk melacak kunjungan pengguna ke halaman-halaman tertentu.
+
+- Cookies sebenarnya aman digunakan karena cookies hanya menyimpan data dan bukan merupakan kode yang dapat dieksekusi akan tetapi cookies memiliki resiko untuk dicuri dan disalahgunakan 
+
+4. ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). ##
+
+- Pertama saya membuat template html untuk login dan register
+- Saya memodifikasi model product agar dapat dimiliki oleh seorang user dengan *foreignkey()* dan saya migrate
+- Saya membuat function register di views agar user dapat membuat akun 
+- saya membuat function login yang memiliki authenticate agar user dapat diidentifikasi dan saya gunakan *setcookies()* agar diset cookies kapan terakhir user login
+- Saya menambah decorator @login_required agar saat main terakses akan diarahkan ke login kecuali dia sudah login
+- Saya menambah function logout() agar user dapat keluar dari main dan menghapus cookies dengan *delete_cookies()*
+- Saya menambah path di url agar function-function baru di views dapat diakses

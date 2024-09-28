@@ -5,8 +5,8 @@
 __pycache__
 db.sqlite3
 media
-main/static/admin
-# Kode line 8 tanyain asdos
+static/admin
+
 
 # Backup files
 *.bak

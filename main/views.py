@@ -112,3 +112,6 @@ def delete_product(request, id):
     product.delete()
     # Kembali ke halaman awal
     return HttpResponseRedirect(reverse('main:show_main'))
+
+def welcome(request):
+    return render(request,"welcome.html")

@@ -189,7 +189,7 @@ Django memiliki mekanisme permissions dan groups untuk mengatur otorisasi.
 Permissions adalah izin yang diberikan pada pengguna atau kelompok pengguna untuk mengakses fitur atau tindakan tertentu (misalnya: can_add_user, can_delete_product).
 Otorisasi di Django biasanya dilakukan dengan menggunakan decorators seperti @login_required dan @permission_required atau melalui pemeriksaan manual terhadap izin.
 
-3. ## Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan? ##
+## 3. Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan? ##
 
 Django mengingat pengguna yang telah login dengan menggunakan sesi (sessions) dan cookies. Saat pengguna berhasil login, Django membuat sesi untuk pengguna tersebut dan menyimpannya di basis data, memori, atau cache. Django kemudian menggunakan cookies untuk menyimpan informasi sesi di sisi pengguna, sehingga bisa mengidentifikasi pengguna saat mereka mengakses halaman lain atau kembali ke situs di waktu berikutnya.
 
@@ -202,7 +202,7 @@ Selain untuk autentikasi login, cookies memiliki kegunaan lain dalam pengembanga
 
 - Cookies sebenarnya aman digunakan karena cookies hanya menyimpan data dan bukan merupakan kode yang dapat dieksekusi akan tetapi cookies memiliki resiko untuk dicuri dan disalahgunakan 
 
-4. ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). ##
+## 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). ##
 
 - Pertama saya membuat template html untuk login dan register
 - Saya memodifikasi model product agar dapat dimiliki oleh seorang user dengan *foreignkey()* dan saya migrate
@@ -211,3 +211,89 @@ Selain untuk autentikasi login, cookies memiliki kegunaan lain dalam pengembanga
 - Saya menambah decorator @login_required agar saat main terakses akan diarahkan ke login kecuali dia sudah login
 - Saya menambah function logout() agar user dapat keluar dari main dan menghapus cookies dengan *delete_cookies()*
 - Saya menambah path di url agar function-function baru di views dapat diakses
+
+
+
+Tugas 5 [x]
+### 1. **Urutan Prioritas Pengambilan CSS Selector (CSS Specificity)**
+
+Dalam CSS, ketika ada beberapa selector yang ditetapkan untuk suatu elemen, browser akan menggunakan **CSS Specificity** (spesifisitas CSS) untuk menentukan gaya mana yang harus diterapkan. Urutan prioritasnya diatur berdasarkan beberapa faktor berikut:
+
+1. **Inline styles**: Gaya yang didefinisikan langsung di elemen HTML memiliki prioritas tertinggi. Contoh: `<div style="color: red;">`.
+2. **ID selectors**: Selector berbasis ID memiliki prioritas tinggi dibandingkan selector lainnya. Contoh: `#header { color: blue; }`.
+3. **Class selectors, attribute selectors, dan pseudo-classes**: Selector berbasis class, attribute, atau pseudo-class berada di prioritas berikutnya. Contoh: `.main-content { color: green; }` atau `a:hover { color: orange; }`.
+4. **Type selectors (Tag) dan pseudo-elements**: Selector berbasis tag HTML atau pseudo-elemen memiliki prioritas lebih rendah. Contoh: `h1 { color: black; }` atau `::before { content: ""; }`.
+5. **Universal selector, combinators, dan negation pseudo-class**: Selector seperti `*`, `>`, `+`, `~`, dan `:not()` memiliki prioritas terendah.
+
+Spesifisitas CSS dihitung berdasarkan empat komponen: 
+- Inline style (skor 1),
+- Jumlah ID (skor 100),
+- Jumlah class, attribute, atau pseudo-class (skor 10),
+- Jumlah elemen dan pseudo-elemen (skor 1).
+
+Gaya dengan **spesifisitas yang lebih tinggi** akan diterapkan. Jika dua selector memiliki spesifisitas yang sama, **gaya yang ditulis terakhir dalam CSS akan diterapkan**.
+
+---
+
+### 2. **Mengapa Responsive Design Penting?**
+
+**Responsive design** adalah konsep yang sangat penting dalam pengembangan aplikasi web karena pengguna web mengakses konten dari berbagai perangkat dengan ukuran layar yang berbeda-beda, seperti smartphone, tablet, dan desktop. Tanpa responsive design, sebuah situs web mungkin tampak terpotong atau sulit digunakan pada perangkat dengan layar kecil.
+
+**Alasan Mengapa Responsive Design Penting**:
+- **Pengalaman Pengguna**: Memberikan tampilan dan fungsi yang optimal di semua perangkat, meningkatkan pengalaman pengguna.
+- **SEO (Search Engine Optimization)**: Google memberikan peringkat yang lebih baik pada situs yang ramah seluler.
+- **Pemeliharaan yang Lebih Mudah**: Desain responsif memungkinkan satu situs web untuk berfungsi di berbagai perangkat tanpa perlu membuat versi terpisah.
+
+**Contoh Aplikasi:**
+- **Sudah Menerapkan Responsive Design**: Situs seperti **YouTube** atau **Airbnb** yang secara otomatis menyesuaikan tata letaknya di perangkat mobile maupun desktop.
+- **Belum Menerapkan Responsive Design**: Situs-situs lama atau yang dibuat tanpa mempertimbangkan pengguna mobile seringkali tidak responsif. Contohnya, beberapa situs web institusi pendidikan atau pemerintahan yang belum dioptimalkan untuk perangkat mobile.
+
+---
+
+### 3. **Perbedaan antara Margin, Border, dan Padding**
+
+Dalam CSS, **margin**, **border**, dan **padding** adalah bagian dari **Box Model** yang mengatur layout antar elemen HTML:
+
+1. **Margin**: Ruang di luar border elemen yang memisahkan elemen tersebut dari elemen lainnya. Margin **tidak mempengaruhi ukuran** elemen.
+   - Contoh: `margin: 20px;`
+
+2. **Border**: Garis di sekeliling padding dan konten elemen. Border dapat memiliki warna, ketebalan, dan gaya yang berbeda-beda.
+   - Contoh: `border: 2px solid black;`
+
+3. **Padding**: Ruang di dalam border dan di sekitar konten elemen. Padding **menambah ruang** di dalam elemen, dan akan memperbesar ukuran elemen secara keseluruhan.
+   - Contoh: `padding: 15px;`
+
+
+---
+
+### 4. **Konsep Flexbox dan Grid Layout dalam CSS**
+
+#### **Flexbox**:
+Flexbox (Flexible Box) adalah model tata letak CSS yang didesain untuk mendistribusikan ruang dan menyelaraskan item dalam container dengan lebih mudah. Flexbox sangat berguna untuk menyusun elemen dalam satu dimensi (horizontal atau vertikal).
+
+**Kegunaan Flexbox**:
+- Pengaturan tata letak secara horizontal maupun vertikal.
+- Penataan elemen agar menyesuaikan ruang kosong secara otomatis.
+- Mendukung penyelarasan (alignment) dan distribusi ruang antar item yang fleksibel.
+
+Di sini, `.container` akan menempatkan item di tengah secara horizontal dan vertikal.
+
+#### **Grid Layout**:
+CSS Grid Layout adalah sistem grid dua dimensi yang lebih canggih dibandingkan Flexbox, memungkinkan pengaturan elemen dalam baris dan kolom secara bersamaan. Grid sangat cocok untuk tata letak yang lebih kompleks.
+
+**Kegunaan Grid**:
+- Membuat tata letak yang terdiri dari beberapa baris dan kolom.
+- Memberikan kontrol penuh atas tata letak dua dimensi.
+- Fleksibel untuk desain grid yang responsif.
+
+Contoh di atas membuat sebuah grid dengan 3 kolom dan 2 baris, masing-masing baris memiliki tinggi 200px, dan kolom membagi lebar secara merata.
+
+**Perbedaan utama antara Flexbox dan Grid Layout**:
+- **Flexbox** digunakan untuk tata letak satu dimensi (horizontal atau vertikal).
+- **Grid Layout** digunakan untuk tata letak dua dimensi (baris dan kolom).
+
+Keduanya sangat berguna dalam mendesain antarmuka yang responsif dan fleksibel.
+
+## 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). ##
+
+- Pertama 

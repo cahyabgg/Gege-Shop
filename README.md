@@ -294,6 +294,10 @@ Contoh di atas membuat sebuah grid dengan 3 kolom dan 2 baris, masing-masing bar
 
 Keduanya sangat berguna dalam mendesain antarmuka yang responsif dan fleksibel.
 
-## 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). ##
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). ##
 
-- Pertama 
+- Pertama saya menambah function edit_product dan create product di views
+- Lalu saya membuat folder static dan file global.css untuk css style
+- saya menambahkan cdn tailwind di base.html
+- saya membuat card_info,edit_product,product card untuk tampilan html
+- saya tambahkan style css dengan bentuk in line

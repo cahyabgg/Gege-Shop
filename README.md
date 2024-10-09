@@ -301,3 +301,39 @@ Keduanya sangat berguna dalam mendesain antarmuka yang responsif dan fleksibel.
 - saya menambahkan cdn tailwind di base.html
 - saya membuat card_info,edit_product,product card untuk tampilan html
 - saya tambahkan style css dengan bentuk in line
+
+Tugas 6 [x]
+### 1. **Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!**
+   JavaScript memiliki berbagai manfaat dalam pengembangan aplikasi web, antara lain:
+   - **Interaktif dan Dinamis**: Memungkinkan perubahan konten halaman secara dinamis tanpa perlu memuat ulang seluruh halaman.
+   - **Responsif**: Aplikasi web dapat merespons input pengguna dengan cepat, sehingga meningkatkan pengalaman pengguna.
+   - **Dukungan Asynchronous**: JavaScript mendukung asynchronous programming (seperti menggunakan `fetch()`), memungkinkan aplikasi berinteraksi dengan server tanpa membekukan UI.
+   - **Kompatibilitas Luas**: JavaScript didukung oleh semua browser modern, sehingga aplikasi dapat berjalan di berbagai perangkat.
+   - **Full-stack Development**: Dengan Node.js, JavaScript bisa digunakan untuk pengembangan full-stack (frontend dan backend), sehingga memudahkan alur pengembangan aplikasi.
+
+### 2. **Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?**
+   Fungsi `await` dalam konteks `fetch()` adalah untuk menunggu penyelesaian dari *Promise* yang dikembalikan oleh `fetch()` sebelum melanjutkan ke baris kode berikutnya. Ini penting karena `fetch()` bersifat asynchronous, sehingga butuh waktu untuk menyelesaikan permintaan ke server.
+
+   Jika tidak menggunakan `await`, maka kode berikutnya akan berjalan tanpa menunggu respons dari server. Ini bisa menyebabkan kesalahan, misalnya mencoba mengakses data yang belum tersedia, karena *Promise* dari `fetch()` belum terselesaikan.
+
+### 3. **Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?**
+   Django secara default menggunakan token CSRF untuk melindungi dari serangan *Cross-Site Request Forgery (CSRF)*. Namun, ketika menggunakan AJAX POST, kita mungkin perlu menonaktifkan perlindungan CSRF, terutama jika klien tidak dapat menangani token CSRF.
+
+   Dengan menggunakan decorator `@csrf_exempt`, kita mengizinkan permintaan AJAX POST untuk dilakukan tanpa validasi token CSRF, sehingga permintaan tidak akan ditolak oleh server karena alasan keamanan ini. Namun, penting untuk menggunakan `csrf_exempt` dengan hati-hati karena bisa membuka potensi risiko keamanan jika tidak diimplementasikan dengan benar.
+
+### 4. **Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?**
+   Meskipun frontend bisa digunakan untuk memvalidasi data, melakukan pembersihan di backend sangat penting karena:
+
+   - **Keamanan**: Validasi di frontend bisa dilewati atau diubah oleh pengguna yang memanipulasi kode di browser, sehingga backend harus memastikan keamanan data.
+   - **Konsistensi**: Backend memastikan bahwa data yang masuk sesuai dengan standar yang telah ditetapkan.
+   - **Perlindungan terhadap Serangan**: Validasi di backend melindungi aplikasi dari berbagai serangan seperti SQL Injection atau XSS, yang bisa terjadi jika data tidak divalidasi dengan baik.
+   - **Akses dari Banyak Klien**: Karena backend bisa diakses oleh berbagai jenis klien (misalnya, aplikasi mobile, API lain), pembersihan data di backend memastikan data aman dan valid dari semua sumber.
+
+## 5. **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!**
+
+   - Pertama saya menambahkan import strip tags untuk mengamankan output
+   - Lalu saya membuat fungsi baru di views untuk menerima input dari ajax yang akan dibuat
+   - Berikutnya saya membuat modal untuk menampilkan card produk
+   - Saya membuat fungsi refresh agar tidak perlu direfresh
+   - Saya memodifikasi forms agar aman
+   - Untuk isi modal saya copy paste html product_card dan tidak menggunakan product_card.html lagi

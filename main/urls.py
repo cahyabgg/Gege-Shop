@@ -3,7 +3,8 @@ from main.views import (
     show_main,create_product,show_json,
     show_json_by_id,show_xml,show_xml_by_id,
     register,user_login,logout_user,
-    edit_product,delete_product,welcome
+    edit_product,delete_product,welcome,
+    add_product_ajax
     )
 
 app_name = 'main'
@@ -19,6 +20,7 @@ urlpatterns = [
     path("register/",register,name="register"),
     path("logout/",logout_user,name="logout"),
     path('edit-product/<int:id>', edit_product, name='edit_product'),
-    path('delete/<int:id>', delete_product, name='delete_product'),
-    path("welcome/",welcome, name="welcome")
+    path('delete-product/<int:id>', delete_product, name='delete_product'),
+    path("welcome/",welcome, name="welcome"),
+    path('create-product-ajax', add_product_ajax, name='add_product_ajax'),
 ]

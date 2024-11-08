@@ -16,6 +16,7 @@ from django.urls import reverse
 
 @login_required(login_url='/login')
 def show_main(request):
+    
 
     context = {
         "name" : request.user.username,

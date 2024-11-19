@@ -4,7 +4,7 @@ from main.views import (
     show_json_by_id,show_xml,show_xml_by_id,
     register,user_login,logout_user,
     edit_product,delete_product,welcome,
-    add_product_ajax
+    add_product_ajax,create_product_flutter
     )
 
 app_name = 'main'
@@ -23,4 +23,5 @@ urlpatterns = [
     path('delete-product/<int:id>', delete_product, name='delete_product'),
     path("welcome/",welcome, name="welcome"),
     path('create-product-ajax', add_product_ajax, name='add_product_ajax'),
+    path('create-flutter/', create_product_flutter, name='create_book_flutter'),
 ]

@@ -1,7 +1,8 @@
+import json
 from django.shortcuts import render,redirect
 from main.models import Product
 from main.forms import ProductForm
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.core import serializers
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -135,3 +136,22 @@ def add_product_ajax(request):
     new_product.save()
 
     return HttpResponse(b"CREATED", status=201)
+
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+
+        data = json.loads(request.body)
+
+        new_book = Product.objects.create(
+            user = request.user,
+            name = data["name"],
+            page = int(data["page"]),
+            description = data["description"]
+        )
+
+        new_book.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
